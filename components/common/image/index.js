@@ -2,10 +2,11 @@ import Image from "next/image";
 import { useState } from "react";
 import PropTypes from "prop-types"; // ES6
 
-const ImageCustom = ({ src, ...rest }) => {
+const ImageCustom = ({ src, layout = "responsive", ...rest }) => {
   const [stateSrc, setSrc] = useState(src);
   return (
     <Image
+      layout={layout}
       {...rest}
       src={stateSrc}
       onError={() => setSrc("/images/placeholder.png")}

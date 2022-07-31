@@ -13,7 +13,6 @@ const dataInfomation = [
 ];
 const Menu = () => {
   const data = useGlobal();
-  console.log(data);
   return (
     <div>
       <div className="box">

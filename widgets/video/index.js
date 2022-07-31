@@ -8,7 +8,8 @@ const Video = ({ videos }) => {
   const [id, setId] = useState(videos[0].id);
   const mainVideo = videos.find((element) => element.id === id);
   const listVideo = videos.filter((element) => element.id !== id);
-  console.log(process.env.API_URL + mainVideo.attributes.file?.data?.attributes?.url);
+  const url_video =
+    process.env.API_URL + mainVideo.attributes.file?.data?.attributes?.url;
   return (
     <div className="my-5 flex">
       <div className="w-full">
@@ -17,14 +18,7 @@ const Video = ({ videos }) => {
         </div>
         <div className="flex w-full">
           <div className="w-3/4 pr-3">
-            <video
-              className="video-main w-full"
-              src={
-                process.env.API_URL +
-                mainVideo.attributes.file?.data?.attributes?.url
-              }
-              controls
-            />
+            <video className="video-main w-full" src={url_video} controls />
             <div className="overlay"></div>
             <div className="font-bold mt-4"> {mainVideo.name} </div>
             <div className="mt-2">{mainVideo.description}</div>

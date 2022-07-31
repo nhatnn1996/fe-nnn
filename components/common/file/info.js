@@ -6,16 +6,17 @@ const mapName = {
 
 const InfoFile = ({ file = {}, open, toggle }) => {
   const dataFile = file?.data?.attributes || {};
-  const styleOverlay = open ? "" : "hidden";
+  const isImage = (dataFile?.mime || "").includes("image");
+  const srcImage = process.env.BASE_IMAGE + dataFile.url;
   const styleModal = open ? "" : "translate-x-[100%]";
   return (
     <>
-      <div
+      {/* <div
         onClick={toggle}
         className={`fixed bottom-0 right-0 z-1000 w-screen h-screen  ${styleOverlay}`}
-      ></div>
+      ></div> */}
       <div
-        className={`fixed bottom-0 right-0 z-[1001] flex flex-col transition-all duration-300  flex-auto w-[500px] p-20 md:p-8 bg-white shadow-lg rounded-md ${styleModal}`}
+        className={`fixed border-[1px] bottom-0 right-0 z-[1001] flex flex-col transition-all duration-300  flex-auto w-[400px] p-20 md:p-8 bg-white shadow-lg rounded-l-md ${styleModal}`}
       >
         <div
           className="flex items-center justify-end"
@@ -28,17 +29,22 @@ const InfoFile = ({ file = {}, open, toggle }) => {
             <XIcon />
           </span>
         </div>
-        <div className="aspect-w-9 aspect-h-6 mt-8">
-          <div className="flex items-center justify-center border rounded-lg bg-gray-50 dark:bg-card py-20">
-            <CollectionIcon className="w-20 h-20 fill-blue-400" />
-          </div>
+        <div className="aspect-w-9 aspect-h-6 mt-4">
+          {!isImage && (
+            <div className="flex items-center justify-center border rounded-lg bg-gray-50 dark:bg-card py-10">
+              <CollectionIcon className="w-20 h-20 fill-blue-400" />
+            </div>
+          )}
+          {isImage && (
+            <img src={srcImage} width="100%" height={"60%"} style={{objectFit: "cover"}} className="rounded" alt="" />
+          )}
         </div>
         <div className="flex flex-col items-start mt-8">
           <div className="text-xl font-medium">
             {dataFile.name || "Không tìm thấy file"}
           </div>
           {dataFile.mime && (
-            <div className="mt-1 px-1.5 rounded text-sm font-semibold leading-5 text-white bg-blue-600">
+            <div className="mt-1 px-2 py-1.5 rounded text-sm font-semibold leading-5 text-white bg-blue-600">
               {mapName[dataFile.mime] || dataFile.mime || "Không xát định"}
             </div>
           )}

@@ -18,7 +18,6 @@ const FolderPage = ({ data, ...rest }) => {
       </div>
     );
   }
-  console.log(defaults);
   return (
     <div>
       <Head>

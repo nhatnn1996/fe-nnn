@@ -13,6 +13,6 @@ module.exports = {
   },
 
   images: {
-    domains: [process.env.BASE_IMAGE],
+    domains: [process.env.BASE_IMAGE, "localhost"],
   },
 };

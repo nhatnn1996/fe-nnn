@@ -5,8 +5,9 @@ export const variants = {
 };
 
 export const variantsHidden = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 },
+  animate: { opacity: 1 },
+  initial: { opacity: 0 },
+  exit: { opacity: 0 },
 };
 export const variantsScale = {
   visible: { opacity: 1, scale: 1 },
