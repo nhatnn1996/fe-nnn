@@ -1,10 +1,12 @@
 const Title = ({ children }) => {
   return (
     <div>
-      <div className="text-xl font-bold p-1 pl-4 title  shadow-md text-white">{children}</div>
+      <div className="text-xl uppercase rounded-[2px] font-semibold p-1.5 pl-3 title shadow text-white">
+        {children}
+      </div>
       <style jsx>{`
-        .title{
-            background: #018EB9;
+        .title {
+          background: #018eb9;
         }
       `}</style>
     </div>

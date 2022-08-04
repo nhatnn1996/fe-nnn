@@ -3,10 +3,11 @@ import { localeTime } from "@/shared/helper/function";
 import NotFound from "@/widgets/notfound";
 import axiosClient from "api-client/base/axios-client";
 import ParseHTML from "@/components/common/parsehtml";
+import Breadcrumb from "@/widgets/breadcrum";
 
 export async function getStaticProps({ params }) {
   const res = await axiosClient.get(
-    "/posts?populate=image&filters[slug][$eq]=" + params.slug
+    "/posts?populate=*&filters[slug][$eq]=" + params.slug
   );
   return {
     props: { data: res.data[0] },
@@ -26,6 +27,16 @@ export async function getStaticPaths() {
 
 const PostDeital = ({ data }) => {
   if (!data) return <NotFound />;
+  const breadcrumb = [
+    {
+      text: data?.attributes?.category?.data?.attributes?.title,
+      url: "/danh-muc/" + data?.attributes?.category?.data?.attributes?.slug,
+    },
+    {
+      text: data?.attributes?.title,
+      url: "/bai-viet/" + data?.attributes?.slug,
+    },
+  ];
 
   const { content, title, createdAt } = data.attributes;
   return (
@@ -35,7 +46,8 @@ const PostDeital = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="pb-10 pr-10">
-        {/* <div className="div">Quay lại</div> */}
+        <Breadcrumb breadcrumb={breadcrumb} />
+
         <div className="font-bold text-blue-900 text-xl">{title}</div>
         <div className=" mt-3">
           Tác giả:

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import PropTypes from "prop-types"; // ES6
+import { getImage } from "@/shared/helper/function";
 
-const ImageCustom = ({ src, layout = "responsive", ...rest }) => {
-  const [stateSrc, setSrc] = useState(src);
+const ImageCustom = ({ src, image, layout = "responsive", ...rest }) => {
+  const parseSrc = image ? getImage(image, "thumbnail") : "";
+  const [stateSrc, setSrc] = useState(src || parseSrc);
   return (
     <Image
       layout={layout}
@@ -19,7 +21,7 @@ const ImageCustom = ({ src, layout = "responsive", ...rest }) => {
 export default ImageCustom;
 
 ImageCustom.propTypes = {
-  src: PropTypes.string,
+  // src: PropTypes.string,
   objectFit: PropTypes.oneOf([
     "fill",
     "contain",

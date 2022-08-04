@@ -10,18 +10,18 @@ import "slick-carousel/slick/slick-theme.css";
 import { timeCache } from "@/shared/config";
 
 export async function getStaticProps({ query, ...ctx }) {
-  const main = await axiosClient("/posts?populate=*&pagination[pageSize]=6");
+  const main = axiosClient("/posts?populate=*&pagination[pageSize]=6");
   const url_inside = `/posts?populate=category&filters[category][slug]=tin-trong-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
   const url_outside = `/posts?populate=category&filters[category][slug]=tin-ngoai-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
   const url_recommend =
     "/posts?_sort=createdAt&populate=*&pagination[pageSize]=3";
   const url_video = "/videos?pagination[pageSize]=4&populate=*";
   const url_notification = "/posts?notification=true&pagination[pageSize]=3";
-  const post_inside = await axiosClient(url_inside);
-  const post_outside = await axiosClient(url_outside);
-  const post_recommend = await axiosClient(url_recommend);
-  const notification = await axiosClient(url_notification);
-  const videos = await axiosClient(url_video);
+  const post_inside = axiosClient(url_inside);
+  const post_outside = axiosClient(url_outside);
+  const post_recommend = axiosClient(url_recommend);
+  const notification = axiosClient(url_notification);
+  const videos = axiosClient(url_video);
   const data = await Promise.all([
     main,
     post_inside,

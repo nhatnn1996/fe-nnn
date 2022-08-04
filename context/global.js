@@ -3,7 +3,9 @@ export const GlobalContext = React.createContext();
 
 const GlobalProvider = ({ children, data }) => {
   return (
-    <GlobalContext.Provider value={{ data }}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ ...data }}>
+      {children}
+    </GlobalContext.Provider>
   );
 };
 

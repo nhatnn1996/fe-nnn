@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import { url_base } from "@/shared/container/index";
 import { setCategories } from "../../store/global";
 import qs from "qs";
 import axiosClient from "api-client/base/axios-client";
@@ -9,7 +8,7 @@ const menus = [
   { name: "Trang chủ", href: "/" },
   {
     name: "Giới thiệu",
-    href: "/danh-muc/gioi-thieu",
+    href: "",
     sub: [
       {
         name: "Sự hình thành",
@@ -82,7 +81,8 @@ const menus = [
     ],
   },
   { name: "Bộ chỉ số", href: "/bo-chi-so" },
-  { name: "Nhà máy nước sạch", href: "/" },
+  { name: "Nhà máy NS", href: "/" },
+  { name: "Thư viện", href: "/thu-vien" },
   { name: "Liên hệ - góp ý", href: "/" },
 ];
 
@@ -176,7 +176,6 @@ const SubMenu = (props) => {
           </Link>
         </li>
       ))}
-      
     </ul>
   );
 };

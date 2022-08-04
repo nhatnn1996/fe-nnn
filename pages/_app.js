@@ -8,21 +8,14 @@ import GlobalContext from "../context/global";
 import "@/shared/styles/globals.css";
 import { SWRConfig } from "swr";
 import { timeCache } from "@/shared/config";
-import { fetcherClient } from "api-client/base/axios-client";
+import axiosClient, { fetcherClient } from "api-client/base/axios-client";
 import { motion } from "framer-motion";
-
-const progress = new ProgressBar({
-  size: 5,
-  color: "#00539f",
-  className: "bar-of-progress",
-  delay: 0,
-});
 
 // Router.events.on("routeChangeStart", progress.start);
 // Router.events.on("routeChangeComplete", progress.finish);
 // Router.events.on("routeChangeError", progress.finish);
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, commonData }) {
   const router = useRouter();
   return (
     <SWRConfig
@@ -31,17 +24,18 @@ function MyApp({ Component, pageProps }) {
         fetcher: fetcherClient,
       }}
     >
-      <GlobalContext data={pageProps}>
+      <GlobalContext data={commonData}>
         <Header />
         <Menu />
 
         <main className="container mx-auto flex mt-10">
           <div className="w-9/12">
             <motion.div
-              key={router.pathname}
+              key={router.asPath}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 0.3 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15, ease: "easeInOut" }}
             >
               <Component {...pageProps} />
             </motion.div>
@@ -55,5 +49,18 @@ function MyApp({ Component, pageProps }) {
     </SWRConfig>
   );
 }
+
+MyApp.getInitialProps = async ({ Component, ctx }) => {
+  const url_notifications =
+    "/posts?&filters[notification][$eq]=true&sort=updatedAt:DESC&pagination[pageSize]=6";
+  const post_notifications = axiosClient(url_notifications);
+  const [notifications] = await Promise.all([post_notifications]);
+
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+  return { pageProps, commonData: { notifications: notifications.data } };
+};
 
 export default MyApp;

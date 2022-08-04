@@ -5,6 +5,7 @@ export const localeTime = (time) => {
 
 export const getImage = (images, name = "thumbnail") => {
   const data = images?.data?.attributes?.formats;
+  if (!data) return "/";
   const url = process.env.API_URL + data[name]?.url;
   return url;
 };

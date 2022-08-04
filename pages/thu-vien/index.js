@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import File from "@/components/common/file/card";
 import { motion } from "framer-motion";
 import { variantsHidden } from "@/shared/config/motion";
+import Breadcrumb from "@/widgets/breadcrum";
 
 const Library = ({ data, ...rest }) => {
   const router = useRouter();
