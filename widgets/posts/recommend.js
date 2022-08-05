@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { getImage } from "@/shared/helper/function";
+import { getImage, localeTime } from "@/shared/helper/function";
 import axiosClient from "api-client/base/axios-client";
 import ImageCustom from "@/components/common/image";
 
@@ -31,7 +31,7 @@ const PostRecommend = () => {
 
 export default PostRecommend;
 
-const Post = ({ item }) => {
+export const Post = ({ item }) => {
   const image = getImage(item.image, "medium");
   return (
     <Link href={"/bai-viet/" + item.slug} passHref>
@@ -47,8 +47,14 @@ const Post = ({ item }) => {
             />
           </div>
         </div>
-        <div className="text-base font-bold text-gray-700	mt-2 hoer:text-blue-700 pointer line-clamp-3">
+        <div className="mt-2 text-xs font-bold opacity-50">
+          {localeTime(item.updatedAt)}
+        </div>
+        <div className="text-base font-semibold text-gray-900	mt-1 hover:text-blue-700 pointer line-clamp-2">
           {item.title}
+        </div>
+        <div className="text-xs text-gray-700	mt-1  line-clamp-2">
+          {item.description}
         </div>
         <style global jsx>{`
           .box {

@@ -30,7 +30,6 @@ export async function getStaticProps(context) {
 }
 
 const PostDeital = ({ post, slug }) => {
-  console.log(post);
   if (!post) return <NotFound />;
   const data = post.attributes;
   return (

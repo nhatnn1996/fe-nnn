@@ -59,7 +59,7 @@ const PostDeital = ({ posts, category }) => {
         <Breadcrumb breadcrumb={breadcrumb} />
         {posts.length === 0 && <img src="/images/notfound.jpg" />}
         {posts.map((element) => (
-          <PostCard key={element.id} item={element} />
+          <PostCard key={element.id} item={element} category={category} />
         ))}
       </div>
       <style jsx>{`
@@ -71,11 +71,12 @@ const PostDeital = ({ posts, category }) => {
   );
 };
 
-const PostCard = ({ item }) => {
+const PostCard = ({ item, category }) => {
   const data = item.attributes;
+  const cate = category.attributes;
   return (
     <div className="post-card rounded-md bg-gray-50 p-4 flex shadown-md transform transition duration-300 hover:-translate-y-1 mb-4">
-      <div className="w-1/5">
+      <div className="w-2/12">
         <ImageCustom
           image={data.image}
           width="100%"
@@ -83,15 +84,18 @@ const PostCard = ({ item }) => {
           objectFit="cover"
         />
       </div>
-      <div className=" w-4/5 flex items-center flex-col px-3 ">
-        <div className="font-bold text-gray-900 w-full ">{data.title}</div>
-        <div className="text-gray-500 line-clamp-4 w-full mt-1 ">
-          <ParseHTML content={data.content} />
+      <div className=" w-10/12 flex items-center flex-col px-3 ">
+        <div className="text-md rounded w-full mb-2">
+          <span className="font-bold text-gray-700"> {cate.title}</span> {" "}
+          <span className="text-xs font-bold text-gray-400">{localeTime(data.updatedAt)}</span>
         </div>
-        <div className="text-gray-900 w-full mt-1 flex items-center">
-          {localeTime(data.createdAt)}
+        <div className="font-bold text-gray-900 w-full ">{data.title}</div>
+        <div className="text-gray-500 line-clamp-3 w-full mt-1 ">
+          <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
+        </div>
+        <div className="text-gray-900 w-full mt-1">
           <Link href={"/bai-viet/" + data.slug}>
-            <div className="text-center ml-3 pointer text-blue-500 hover:text-blue-900 font-bold ">
+            <div className="text-center flex pointer text-blue-500 hover:text-blue-900 font-bold ">
               Xem chi tiết
             </div>
           </Link>

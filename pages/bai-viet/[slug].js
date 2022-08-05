@@ -4,13 +4,23 @@ import NotFound from "@/widgets/notfound";
 import axiosClient from "api-client/base/axios-client";
 import ParseHTML from "@/components/common/parsehtml";
 import Breadcrumb from "@/widgets/breadcrum";
+import { Post } from "@/widgets/posts/recommend";
 
 export async function getStaticProps({ params }) {
   const res = await axiosClient.get(
     "/posts?populate=*&filters[slug][$eq]=" + params.slug
   );
+  const slug = res.data[0].attributes?.category?.attributes?.slug;
+  const resPostsCategory = await axiosClient.get(
+    "/posts?populate=image&filter[category][slug]=" +
+      slug +
+      "&pagination[pageSize]=5"
+  );
+  const posts = resPostsCategory.data
+    .filter((element) => element.id !== res.data[0].id)
+    .slice(0, 4);
   return {
-    props: { data: res.data[0] },
+    props: { data: res.data[0], posts: posts },
   };
 }
 
@@ -25,7 +35,7 @@ export async function getStaticPaths() {
   };
 }
 
-const PostDeital = ({ data }) => {
+const PostDeital = ({ data, posts }) => {
   if (!data) return <NotFound />;
   const breadcrumb = [
     {
@@ -56,19 +66,18 @@ const PostDeital = ({ data }) => {
             {/* {data.admin_user?.firstname} */}
           </strong>
         </div>
-        <code className="text block mt-3">{localeTime(createdAt)}</code>
+        <code className="text-xs block font-bold opacity-50 my-3">
+          {localeTime(createdAt)}
+        </code>
         <ParseHTML content={content} />
-        {data.file && (
-          <div className="mt-5">
-            <a
-              className="font-medium text-blue-700 text-lg"
-              href={process.env.BASE_IMAGE + data.file.url}
-              target="_blank"
-            >
-              Xem nội dung chi tiết
-            </a>
-          </div>
-        )}
+        <div className="font-bold mt-20 text-xl ">
+          Bài viết cùng danh mục
+        </div>
+        <div className="flex mt-2">
+          {posts.map((element) => (
+            <Post item={element.attributes} key={element.slug} />
+          ))}
+        </div>
       </div>
       <style jsx>{`
         .content p {

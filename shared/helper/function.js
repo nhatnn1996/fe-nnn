@@ -1,5 +1,5 @@
 export const localeTime = (time) => {
-  const day = new Date(time).toLocaleString().split(",")[0];
+  const day = new Date(time).toLocaleString().split(",")[0].replace(/\//g, "-");
   return day;
 };
 

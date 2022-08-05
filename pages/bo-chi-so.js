@@ -6,11 +6,18 @@ import { DownloadIcon } from "@heroicons/react/solid";
 import InfoFile from "@/components/common/file/info";
 import { useState } from "react";
 import { useModal } from "hooks/use-modal";
+import Pagination from "@/widgets/pagiantion";
 
 const FolderPage = ({ data, ...rest }) => {
   const list = data.data;
+  let size = 10;
   const [defaults, setDefault] = useState(list[0]);
   const [open, setOpen, toggle] = useModal();
+  const [page, setPage] = useState(0);
+
+  const render_list = list.slice(page * size, page * size + size);
+  const total = Math.ceil(list.length / size);
+
   if (list.length === 0) {
     return (
       <div className="px-10">
@@ -26,7 +33,7 @@ const FolderPage = ({ data, ...rest }) => {
       </Head>
       <div className="w-full p-4">
         <div className=" ">
-          {list.map((item) => (
+          {render_list.map((item) => (
             <Element
               key={item.id}
               data={item.attributes}
@@ -36,6 +43,15 @@ const FolderPage = ({ data, ...rest }) => {
               }}
             />
           ))}
+        </div>
+        <div className="my-5">
+          <Pagination
+            page={page}
+            setPage={setPage}
+            total={total}
+            length={list.length}
+            size={size}
+          />
         </div>
       </div>
       <InfoFile file={defaults?.attributes?.file} open={open} toggle={toggle} />
