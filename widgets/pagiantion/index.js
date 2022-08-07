@@ -2,7 +2,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 export default function Pagination({ page, setPage, size, total, length }) {
-  console.log(Array(total).fill(23));
   return (
     <div className="bg-white py-3 flex items-center justify-between  ">
       <div className="flex-1 flex justify-between sm:hidden">
@@ -78,7 +77,6 @@ export default function Pagination({ page, setPage, size, total, length }) {
             </span> */}
             <span
               onClick={() => {
-                console.log(page, total);
                 if (page + 1 === total) return;
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 (index) => {

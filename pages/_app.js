@@ -2,7 +2,6 @@ import Header from "@/widgets/header/index";
 import Menu from "@/widgets/menu/index";
 import Footer from "@/widgets/footer/";
 import SliderBar from "@/widgets/slider-bar/index";
-import ProgressBar from "@badrap/bar-of-progress";
 import Router, { useRouter } from "next/router";
 import GlobalContext from "../context/global";
 import "@/shared/styles/globals.css";
@@ -17,6 +16,7 @@ import { motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, commonData }) {
   const router = useRouter();
+  // console.log(Component.removeSlide);
   return (
     <SWRConfig
       value={{
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, commonData }) {
         <Menu />
 
         <main className="container mx-auto flex mt-10">
-          <div className="w-9/12">
+          <div className={Component.removeSlide ? "w-full min-h-[70vh]" : "w-9/12"}>
             <motion.div
               key={router.asPath}
               initial={{ opacity: 0 }}
@@ -40,9 +40,12 @@ function MyApp({ Component, pageProps, commonData }) {
               <Component {...pageProps} />
             </motion.div>
           </div>
-          <div className="w-3/12 ml-3">
-            <SliderBar />
-          </div>
+
+          {!Component.removeSlide && (
+            <div className="w-3/12 ml-3">
+              <SliderBar />
+            </div>
+          )}
         </main>
         <Footer />
       </GlobalContext>

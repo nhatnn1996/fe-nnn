@@ -154,3 +154,7 @@ svg {
   z-index: 1;
   border-top: 2px solid #cfcfcf;
 }
+.leaflet-container svg {
+  width: inherit;
+  height: inherit;
+}
