@@ -1,28 +1,26 @@
-import { useState } from "react";
 import Title from "@/components/title";
 import Link from "next/link";
-import { url_api, url_base } from "@/shared/container/index";
-import axiosClient from "api-client/base/axios-client";
 import { useGlobal } from "@/context/global";
-
-const dataInfomation = [
-  { title: "Thông báo 1", id: "wieu2103912", href: "/about" },
-  { title: "Thông báo 2", id: "12312414", href: "/about" },
-  { title: "Thông báo 3", id: "12312098102", href: "/about" },
-  { title: "Thông báo 4", id: "91283jshkhwqke", href: "/about" },
-];
 const Menu = () => {
   const data = useGlobal();
   return (
     <div>
+      <div className="box my-3">
+        <Title>Thông tin nước sạch</Title>
+        <Link href="/bo-chi-so/ban-do">
+          <div className="overflow-hidden mt-2 relative map-home">
+            <img
+              src="/images/binh-dinh-map.jpeg"
+              className="cursor-pointer hover:scale-125	transition-all duration-300"
+            />
+            <div className="absolute tooltip opacity-0 top-[30%] left-[10%] bg-white shadow-lg pointer-events-none rounded p-4 font-bold">
+              Bấm vào để đi đến bản đồ
+            </div>
+          </div>
+        </Link>
+      </div>
       <div className="box">
         <Title>Chức năng </Title>
-        {/* <div className="mt-2">
-          <img
-            src="https://vtv1.mediacdn.vn/zoom/550_339/2018/11/13/photo-11-15421149127921523173283.jpg"
-            alt=""
-          />
-        </div> */}
       </div>
       <div className="mt-2">
         <a
@@ -43,6 +41,7 @@ const Menu = () => {
         <Title>Bộ chỉ số</Title>
         <img src="/images/image_4.jpg" className="mt-2" alt="" />
       </div>
+
       <div className="box my-3">
         <Title>Thông báo</Title>
         <Notifications data={data.notifications || []} />
@@ -55,6 +54,13 @@ const Menu = () => {
         <Title>Thanh toán trực tiếp</Title>
         <img src="/images/agribank.jpg" className="mt-2" alt="" />
       </div>
+      <style jsx>
+        {`
+          .map-home:hover .tooltip {
+            opacity: 1;
+          }
+        `}
+      </style>
     </div>
   );
 };

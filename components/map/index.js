@@ -77,7 +77,7 @@ export default function App() {
   function onEachFeature(feature, layer) {
     const district = feature.properties.District;
     if (!listLayer[district]) listLayer[district] = layer;
-    layer.bindPopup('<div class="hi-class">Hi danh em</div>');
+    layer.bindPopup(`<div class="hi-class"> Huyện ${district} </div>`);
     layer.on({
       mouseover: highlightFeature,
       mouseout: resetHighlight,
@@ -110,11 +110,11 @@ export default function App() {
           <SetupMap />
         </MapContainer>
       </div>
-      <div className="w-full">
+      <div className="w-full pl-8">
         {Object.keys(colors).map((key) => {
           return (
             <div
-              className=""
+              className=" py-4 px-4 rounded border-b-[1px] border-dashed cursor-pointer transition-color duration-300 hover:text-white font-medium hover:bg-blue-500"
               key={key}
               onClick={() => {
                 mapRef.current.fitBounds(listLayer[key].getBounds());
