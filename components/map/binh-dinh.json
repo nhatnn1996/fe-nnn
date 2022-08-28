@@ -8,8 +8,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Van Canh",
-        "Pop_2009": 24661,
-        "Code_re": 52551
+        "slug": "van-canh"
       },
       "geometry": {
         "type": "Polygon",
@@ -2026,6 +2025,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "An Nhon",
+        "slug": "an-nhon",
         "Pop_2009": 193817,
         "Code_re": 52549
       },
@@ -2174,6 +2174,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Tay Son",
+        "slug": "tay-son",
         "Pop_2009": 123309,
         "Code_re": 52547
       },
@@ -2408,6 +2409,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu Cat",
+        "slug": "phu-cat",
         "Pop_2009": 188042,
         "Code_re": 52548
       },
@@ -2814,6 +2816,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Vinh Thanh",
+        "slug": "vinh-thanh",
         "Pop_2009": 27978,
         "Code_re": 52546
       },
@@ -3071,6 +3074,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Hoai An",
+        "slug": "hoai-an",
         "Pop_2009": 84437,
         "Code_re": 52544
       },
@@ -3270,6 +3274,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Hoai Nhon",
+        "slug": "hoai-nhon",
         "Pop_2009": 205590,
         "Code_re": 52543
       },
@@ -3458,6 +3463,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "An Lao",
+        "slug": "an-lao",
         "Pop_2009": 24200,
         "Code_re": 52542
       },
@@ -3752,6 +3758,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Tuy Phuoc",
+        "slug": "tuy-phuoc",
         "Pop_2009": 179985,
         "Code_re": 52550
       },
@@ -3920,6 +3927,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu My",
+        "slug": "phu-my",
         "Pop_2009": 169304,
         "Code_re": 52545
       },
@@ -4230,6 +4238,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 311235,
         "Code_re": 52540
       },
@@ -4377,6 +4386,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 311235,
         "Code_re": 52540
       },
@@ -4574,6 +4584,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu My",
+        "slug": "phu-my",
         "Pop_2009": 0,
         "Code_re": 52545
       },
@@ -4606,6 +4617,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu My",
+        "slug": "phu-my",
         "Pop_2009": 0,
         "Code_re": 52545
       },
@@ -4667,6 +4679,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu My",
+        "slug": "phu-my",
         "Pop_2009": 0,
         "Code_re": 52545
       },
@@ -4728,6 +4741,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Phu My",
+        "slug": "phu-my",
         "Pop_2009": 0,
         "Code_re": 52545
       },
@@ -4789,6 +4803,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -4830,6 +4845,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -4891,6 +4907,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -4952,6 +4969,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5013,6 +5031,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5074,6 +5093,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Tuy Phuoc",
+        "slug": "tuy-phuoc",
         "Pop_2009": 0,
         "Code_re": 52550
       },
@@ -5120,6 +5140,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5182,6 +5203,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5240,6 +5262,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5283,6 +5306,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Qui Nhon",
+        "slug": "qui-nhon",
         "Pop_2009": 0,
         "Code_re": 52540
       },
@@ -5321,6 +5345,7 @@
         "f_code": "AD02",
         "Province": "Binh Dinh",
         "District": "Van Canh",
+        "slug": "van-canh",
         "Pop_2009": 24661,
         "Code_re": 52551
       },
@@ -5516,6 +5541,37 @@
             [108.89753730900003, 13.820141008000064],
             [108.90392311100004, 13.842863253000075],
             [108.91713722300005, 13.839001826000072]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 14323268,
+        "f_code": "AD23202",
+        "Province": "Binh Dinh",
+        "District": "Binh Duong",
+        "slug": "binh-duong",
+        "Pop_2009": 2323,
+        "Code_re": 52540
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [108.99261474609375, 14.334912444740848],
+            [108.97201538085938, 14.29632365104816],
+            [108.97201538085938, 14.271037745292757],
+            [108.99124145507812, 14.248411107424003],
+            [109.04342651367186, 14.248411107424003],
+            [109.04342651367186, 14.228444542317433],
+            [109.061279296875, 14.228444542317433],
+            [109.09698486328125, 14.261721169444103],
+            [109.09698486328125, 14.300315902681035],
+            [109.07913208007812, 14.33890401019508],
+            [109.00360107421874, 14.35087828000177],
+            [108.99261474609375, 14.334912444740848]
           ]
         ]
       }
