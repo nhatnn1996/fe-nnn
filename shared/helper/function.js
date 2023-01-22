@@ -1,11 +1,12 @@
+import dayjs from "dayjs";
 export const localeTime = (time) => {
-  const day = new Date(time).toLocaleString().split(",")[0].replace(/\//g, "-");
+  const day = dayjs(time).format("DD/MM/YYYY")
   return day;
 };
 
 export const getImage = (images, name = "thumbnail") => {
   const data = images?.data?.attributes?.formats;
-  if (!data) return "/";
+  if (!data || !data[name]?.url) return "/";
   const url = process.env.API_URL + data[name]?.url;
   return url;
 };

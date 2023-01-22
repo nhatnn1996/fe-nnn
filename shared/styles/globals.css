@@ -1,12 +1,22 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
-
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 body,
 html {
   /* font-family: "Noto Serif Display", serif; */
+  /* font-family: "Merriweather", serif; */
+  font-family: "Be Vietnam Pro", sans-serif;
+  /* letter-spacing: 0.4; */
+}
+
+@layer {
+  .hover-text {
+    @apply hover:text-blue-800 transition duration-200 ease-in-out hover:translate-y-[-10px];
+  }
 }
 
 .pointer {
@@ -40,7 +50,7 @@ html {
   body,
   html {
     font-size: 14px;
-    background-color: rgb(59 130 246 / 0.5);
+    /* background-color: rgb(59 130 246 / 0.5); */
   }
 }
 
@@ -109,6 +119,13 @@ html {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   overflow: hidden;
 }
 

@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import PostMain from "@/widgets/posts/main";
 import PostContent from "@/widgets/posts/content";
+import Extention from "@/widgets/extention";
 import PostRecommed from "@/widgets/posts/recommend";
 import Video from "@/widgets/video/index";
 import axiosClient from "api-client/base/axios-client";
@@ -11,8 +12,8 @@ import { timeCache } from "@/shared/config";
 
 export async function getStaticProps({ query, ...ctx }) {
   const main = axiosClient("/posts?populate=*&pagination[pageSize]=6");
-  const url_inside = `/posts?populate=category&filters[category][slug]=tin-trong-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
-  const url_outside = `/posts?populate=category&filters[category][slug]=tin-ngoai-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
+  const url_inside = `/posts?populate=*&filters[category][slug]=tin-trong-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
+  const url_outside = `/posts?populate=*&filters[category][slug]=tin-ngoai-nuoc&pagination[pageSize]=6&_sort=updatedAt:desc`;
   const url_recommend =
     "/posts?_sort=createdAt&populate=*&pagination[pageSize]=3";
   const url_video = "/videos?pagination[pageSize]=4&populate=*";
@@ -47,6 +48,7 @@ export default function Home({ data }) {
 
       <div className="main">
         <PostMain posts={posts_main.data} />
+        <Extention />
         <PostContent
           post_inside={post_inside.data}
           post_outside={post_outside.data}

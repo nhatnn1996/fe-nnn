@@ -88,8 +88,14 @@ export default function App({ listGeoJson }) {
   const fillBlueOptions = { fillColor: "blue" };
 
   function onEachFeature(feature, layer) {
-    const { name, count, percent, source, District: district} = feature.properties;
-    console.log(feature.properties);
+    const {
+      name,
+      count,
+      percent,
+      source,
+      District: district,
+    } = feature.properties;
+    // console.log(feature.properties);
     if (!listLayer[district]) listLayer[district] = layer;
     layer.bindPopup(`<div class="w-[300px] font-semibold text-lg">
       <div class="flex my-3"> <span> Vùng </span> <span class='ml-auto font-bold '> ${name} </span> </div>

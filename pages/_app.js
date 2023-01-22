@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, commonData }) {
         <Menu />
 
         <main className="container mx-auto flex mt-10">
-          <div className={Component.removeSlide ? "w-full min-h-[70vh]" : "w-9/12"}>
+          <div className={Component.removeSlide ? "w-full min-h-[70vh]" : "w-full"}>
             <motion.div
               key={router.asPath}
               initial={{ opacity: 0 }}
@@ -41,11 +41,11 @@ function MyApp({ Component, pageProps, commonData }) {
             </motion.div>
           </div>
 
-          {!Component.removeSlide && (
+          {/* {!Component.removeSlide && (
             <div className="w-3/12 ml-3">
               <SliderBar />
             </div>
-          )}
+          )} */}
         </main>
         <Footer />
       </GlobalContext>

@@ -3,17 +3,25 @@ import { useState } from "react";
 import PropTypes from "prop-types"; // ES6
 import { getImage } from "@/shared/helper/function";
 
-const ImageCustom = ({ src, image, layout = "responsive", ...rest }) => {
-  const parseSrc = image ? getImage(image, "thumbnail") : "";
-  const [stateSrc, setSrc] = useState(src || parseSrc);
+const ImageCustom = ({
+  src,
+  image,
+  layout = "responsive",
+  size = "thumbnail",
+  ...rest
+}) => {
+  const parseSrc = image ? getImage(image, size) : "";
+  const [stateSrc, setSrc] = useState(
+    src || parseSrc || "/images/placeholder.png"
+  );
   return (
     <Image
       layout={layout}
-      {...rest}
       src={stateSrc}
       onError={() => setSrc("/images/placeholder.png")}
       placeholder="blur"
       blurDataURL="/images/placeholder.png"
+      {...rest}
     />
   );
 };
