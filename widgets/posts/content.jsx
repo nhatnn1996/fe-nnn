@@ -49,7 +49,17 @@ const PostContent = ({ post_inside, post_outside }) => {
           </div>
         </div>
       </div>
-      <div className="w-4/12">hellow</div>
+      <div className="w-4/12 ml-3">
+        <div className="font-bold  text-lg text-uppercase mb-4">
+          <span className=" pb-2">TIN MỚI</span>
+        </div>
+        <div className="mt-4">
+          {post_outside &&
+            [...post_outside, ...post_outside].map((item) => {
+              return <PostSmall item={item?.attributes} key={item.id} news />;
+            })}
+        </div>
+      </div>
     </div>
   );
 };
@@ -92,10 +102,10 @@ const Post = ({ item }) => {
   );
 };
 
-const PostSmall = ({ item }) => {
+export const PostSmall = ({ item, news, index }) => {
   const caterogrory = item.category.data.attributes.title;
   return (
-    <div className="mb-4">
+    <div className="mb-4 relative">
       <Link href={"/bai-viet/" + item.slug}>
         <a className="flex" title={item.title}>
           <div className="w-3/12">
@@ -114,7 +124,8 @@ const PostSmall = ({ item }) => {
           <div className="w-9/12 px-2">
             <div className="flex items-center">
               <div className="font-mono text-xs text-blue-800  mr-3 uppercase font-bold">
-                {caterogrory}</div>
+                {caterogrory}
+              </div>
               <span className="px-1 text-gray-400">/</span>
               <small className=" font-mono font-bold text-[12px] text-gray-400">
                 {localeTime(item.createdAt)}
@@ -126,6 +137,11 @@ const PostSmall = ({ item }) => {
           </div>
         </a>
       </Link>
+      {news && (
+        <div className="absolute top-0 right-0">
+          <img src="/images/new.png" alt="" width={40} height={40} />
+        </div>
+      )}
     </div>
   );
 };
