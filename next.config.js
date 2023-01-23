@@ -10,6 +10,10 @@ module.exports = {
   //   },
   // },
   images: {
-    domains: ["localhost", "admin.nuocnongthon.binhdinh.vn"],
+    domains: [
+      "localhost",
+      "admin.nuocnongthon.binhdinh.vn",
+      "nuocnongthon.binhdinh.vn",
+    ],
   },
 };

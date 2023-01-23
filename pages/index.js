@@ -9,6 +9,7 @@ import axiosClient from "api-client/base/axios-client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { timeCache } from "@/shared/config";
+import Images from "@/components/home/list-image";
 
 export async function getStaticProps({ query, ...ctx }) {
   const main = axiosClient("/posts?populate=*&pagination[pageSize]=6");
@@ -53,8 +54,9 @@ export default function Home({ data }) {
           post_inside={post_inside.data}
           post_outside={post_outside.data}
         />
-        <PostRecommed post_recommend={post_recommend.data} />
+        <Images />
         <Video videos={videos.data} />
+        <PostRecommed post_recommend={post_recommend.data} />
       </div>
     </div>
   );

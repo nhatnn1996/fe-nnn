@@ -23,6 +23,12 @@ html {
   .text-primary {
     color: #00539f;
   }
+  .bg-secondary {
+    background: #f4f6f6;
+  }
+  .text-secondary {
+    color: #f4f6f6;
+  }
 }
 
 .pointer {

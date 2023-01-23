@@ -16,12 +16,12 @@ const PostMain = ({ posts }) => {
   return (
     <div className="post-main pb-10 overflow-hidden">
       <div className="flex gap-3">
-        <div className="w-9/12">
-          <Slider {...settings} className="mx-[-8px] mt-2">
+        <div className="w-9/12 h-full">
+          <Slider {...settings} className="mx-[-8px] mt-2 h-full">
             {posts.map((item, index) => {
               const post = item.attributes;
               return (
-                <div className={`post-content w-12/12 px-2`} key={item._id}>
+                <div className={`post-content w-12/12 px-2 h-full`} key={item._id}>
                   <div className="bg-gray-50">
                     <ImageCustom
                       className="post-main-image mt-2"

@@ -9,10 +9,10 @@ const Header = () => {
       <nav className=" bg-white h-12 w-full py-4 container mx-auto">
         <div className="flex items-center">
           <div className="font-bold text-red-800">
-            Nước nông thôn Tỉnh Bình Định kính chào năm mới 2023 an khanh thịnh
+          MÔI TRƯỜNG NÔNG THÔN TỈNH BÌNH ĐỊNH kính chào năm mới 2023 an khanh thịnh
             vượng vạn sự như ý
           </div>
-          <div className="fixed top-0 w-[150px] right-0">
+          <div className="fixed top-0 w-[150px] right-0 z-10">
             <Image
               src="/images/tet.png"
               width={100}

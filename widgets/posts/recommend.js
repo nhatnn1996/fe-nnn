@@ -17,7 +17,7 @@ const PostRecommend = () => {
   return (
     <div className="post-main py-5 mt-5 flex">
       <div className="">
-        <div className="font-bold text-blue-600 text-md">TIN NỔI BẬT</div>
+        <div className="font-bold text-md">TIN NỔI BẬT</div>
         <div className="mt-1 flex " style={{ justifyContent: "space-between" }}>
           {state.map((element) => {
             const post = element.attributes;
