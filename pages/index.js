@@ -61,3 +61,5 @@ export default function Home({ data }) {
     </div>
   );
 }
+
+Home.removeSlide = true;

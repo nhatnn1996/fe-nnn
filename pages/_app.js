@@ -41,11 +41,11 @@ function MyApp({ Component, pageProps, commonData }) {
             </motion.div>
           </div>
 
-          {/* {!Component.removeSlide && (
+          {!Component.removeSlide && (
             <div className="w-3/12 ml-3">
               <SliderBar />
             </div>
-          )} */}
+          )}
         </main>
         <Footer />
       </GlobalContext>

@@ -55,8 +55,15 @@ const PostContent = ({ post_inside, post_outside }) => {
         </div>
         <div className="mt-4">
           {post_outside &&
-            [...post_outside, ...post_outside].map((item) => {
-              return <PostSmall item={item?.attributes} key={item.id} news />;
+            [...post_outside, ...post_outside].map((item, index) => {
+              return (
+                <PostSmall
+                  item={item?.attributes}
+                  key={item.id}
+                  news
+                  index={index+1}
+                />
+              );
             })}
         </div>
       </div>
@@ -108,7 +115,7 @@ export const PostSmall = ({ item, news, index }) => {
     <div className="mb-4 relative">
       <Link href={"/bai-viet/" + item.slug}>
         <a className="flex" title={item.title}>
-          <div className="w-3/12">
+          <div className="w-3/12 relative">
             <div className="w-full rounded-sm overflow-hidden">
               <ImageCustom
                 className="post-main-image mt-2 w-full"
@@ -120,6 +127,14 @@ export const PostSmall = ({ item, news, index }) => {
                 size="small"
               />
             </div>
+            {index && (
+              <div
+                style={{ transform: "translateY(-50%)" }}
+                className="absolute top-0 left-1 text-white text-md flex justify-center items-center align-center font-black w-6 h-6 rounded-full bg-[#21ad37] border-white border-2"
+              >
+                {index}
+              </div>
+            )}
           </div>
           <div className="w-9/12 px-2">
             <div className="flex items-center">
