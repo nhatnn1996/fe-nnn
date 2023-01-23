@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const PostMain = () => {
   const extentions = [
@@ -29,11 +28,11 @@ const PostMain = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-4 gap-2 mt-10">
+    <div className="grid grid-cols-4 gap-4 mt-10">
       {extentions.map((element) => {
         return (
           <a href={element.url} key={element.url} target="_blank">
-            <div className="bg-[#F4F6F6] rounded-lg shadow cursor-pointer px-2 py-10 hover:shadow-lg hover:translate-y-[-10px] transition  ease-in-out duration-250">
+            <div className="bg-[#fffdf7] rounded-lg shadow-sm cursor-pointer px-2 py-10 hover:shadow-lg hover:translate-y-[-10px] transition  ease-in-out duration-250">
               <div className="flex justify-center ">
                 <Image
                   src={element.src}
@@ -43,7 +42,7 @@ const PostMain = () => {
                   className="rounded-md"
                 />
               </div>
-              <div className="font-bold uppercase mt-10 text-center">
+              <div className="font-bold uppercase mt-10 text-center text-stone-700">
                 {element.label}
               </div>
             </div>

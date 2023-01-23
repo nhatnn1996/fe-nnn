@@ -68,7 +68,7 @@ const Header = () => {
 
         <style jsx>{`
           .header {
-            background: linear-gradient(to right, #00b4db, #0083b0);
+            background: linear-gradient(to right, #005776, #0083b0);
           }
           .contact {
             position: relative;

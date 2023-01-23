@@ -6,7 +6,7 @@ const settings = {
   dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
 };
@@ -14,6 +14,7 @@ const items = [
   "https://nuocnongthon.binhdinh.vn/images/stories/hinhanhnhamay/3caac04bbb574b091246.jpg",
   "https://nuocnongthon.binhdinh.vn/images/stories/hinhanhnhamay/51a78b735bfbada5f4ea.jpg",
   "https://nuocnongthon.binhdinh.vn/images/stories/hinhanhnhamay/530085de5556a308fa47.jpg",
+  "https://nuocnongthon.binhdinh.vn/images/stories/hinhanhnhamay/3caac04bbb574b091246.jpg",
 ];
 const Images = () => {
   const ref = useRef();

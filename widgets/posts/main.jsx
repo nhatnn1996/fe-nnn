@@ -14,14 +14,17 @@ const PostMain = ({ posts }) => {
     autoplay: true,
   };
   return (
-    <div className="post-main pb-10 overflow-hidden">
+    <div className="post-main overflow-hidden">
       <div className="flex gap-3">
         <div className="w-9/12 h-full">
           <Slider {...settings} className="mx-[-8px] mt-2 h-full">
             {posts.map((item, index) => {
               const post = item.attributes;
               return (
-                <div className={`post-content w-12/12 px-2 h-full`} key={item._id}>
+                <div
+                  className={`post-content w-12/12 px-2 h-full hover:text-blue-700 group`}
+                  key={item._id}
+                >
                   <div className="bg-gray-50">
                     <ImageCustom
                       className="post-main-image mt-2"
@@ -33,13 +36,12 @@ const PostMain = ({ posts }) => {
                       size="small"
                     />
                   </div>
-
                   <Link href={"/bai-viet/" + post.slug}>
                     <div>
-                      <div className="text-base font-bold text-gray-700	mt-2 hover:text-blue-700">
+                      <div className="text-base font-bold text-gray-700	mt-2">
                         {post.title}
                       </div>
-                      <div className="text-base text-gray-700 hover:text-blue-700 line-clamp-2">
+                      <div className="text-base text-gray-600 line-clamp-2 italic">
                         {post.description}
                       </div>
                     </div>
@@ -51,12 +53,12 @@ const PostMain = ({ posts }) => {
         </div>
         <div className="w-3/12">
           <Link href="/bo-chi-so/ban-do">
-            <div className="overflow-hidden mt-2 relative map-home">
+            <div className="overflow-hidden mt-2 map-home group relative rounded">
               <img
                 src="/images/binh-dinh-map.jpeg"
                 className="cursor-pointer hover:scale-125	transition-all duration-300"
               />
-              <div className="absolute tooltip opacity-0 top-[30%] left-[10%] bg-white shadow-lg pointer-events-none rounded p-4 font-bold">
+              <div className="absolute opacity-1 top-[30%] left-[10%] bg-white bg-gray shadow-lg pointer-events-none rounded p-4 font-bold">
                 Bấm vào để đi đến bản đồ
               </div>
             </div>
@@ -68,7 +70,8 @@ const PostMain = ({ posts }) => {
           cursor: pointer;
         }
         .post-main {
-          border-bottom: 1px solid hsla(0, 0%, 0%, 0.3);
+          // border-bottom: 1px dotted hsla(0, 0%, 0%, 0.3);
+          // border-width: 2px;
         }
         .post-main-image {
           width: 100%;
@@ -76,6 +79,7 @@ const PostMain = ({ posts }) => {
           object-fit: cover;
         }
       `}</style>
+      <div className="mt-10 h-1 w-full bg-secondary"> </div>
     </div>
   );
 };
