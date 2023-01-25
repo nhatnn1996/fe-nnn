@@ -1,6 +1,7 @@
 import Title from "@/components/title";
 import Link from "next/link";
 import { useGlobal } from "@/context/global";
+import { BellIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
 const Menu = () => {
   const data = useGlobal();
   return (
@@ -19,9 +20,6 @@ const Menu = () => {
           </div>
         </Link>
       </div>
-      <div className="box">
-        <Title>Chức năng </Title>
-      </div>
       <div className="mt-2">
         <a
           href="https://van.ehoadon.vn/LUEW?AID=2DC7564B-AE9B-4CD4-938B-C7D62849B06D"
@@ -37,23 +35,29 @@ const Menu = () => {
           </div>
         </a>
       </div>
-      <div className="box my-3">
-        <Title>Bộ chỉ số</Title>
-        <img src="/images/image_4.jpg" className="mt-2" alt="" />
-      </div>
-
-      <div className="box my-3">
+      <div className="box mt-10 mb-3">
         <Title>Thông báo</Title>
         <Notifications data={data.notifications || []} />
       </div>
-      <div className="box my-3">
-        <Title>Dự án đầu tư</Title>
-        <img src="/images/adb.jpg" className="mt-2" alt="" />
+
+      <div className="box mt-10 mb-3">
+        <Title>Bộ chỉ số</Title>
+        {data.notifications.map((item) => {
+          const { title, slug } = item.attributes;
+          return (
+            <Link href={"/bai-viet/" + slug} title={title}>
+              <a
+                title={title}
+                className="flex mt-3 pointer font-bold text-gray-700 hover:text-blue-700 truncate"
+              >
+                <InformationCircleIcon className="h-6 w-6 stroke-blue-400" />
+                <div className="w-[300px] truncate text-lg ml-3">{title}</div>
+              </a>
+            </Link>
+          );
+        })}
       </div>
-      <div className="box my-3">
-        <Title>Thanh toán trực tiếp</Title>
-        <img src="/images/agribank.jpg" className="mt-2" alt="" />
-      </div>
+
       <style jsx>
         {`
           .map-home:hover .tooltip {
@@ -79,22 +83,12 @@ const Notifications = ({ data }) => {
 const Notification = ({ value }) => {
   const { slug, title } = value.attributes;
   return (
-    <Link href={"/bai-viet/" + slug}>
-      <a className="flex mt-3 pointer font-bold text-gray-700 hover:text-blue-700 truncate">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 stroke-green-600"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-          />
-        </svg>
+    <Link href={"/bai-viet/" + slug} title={title}>
+      <a
+        title={title}
+        className="flex mt-3 pointer font-bold text-gray-700 hover:text-blue-700 truncate"
+      >
+        <BellIcon className="h-6 w-6 stroke-yellow-400" />
 
         <div className="w-[300px] truncate text-lg ml-3">{title}</div>
         <style jsx>{`

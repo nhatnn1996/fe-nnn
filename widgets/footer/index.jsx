@@ -1,4 +1,10 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3BottomRightIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 const Footer = ({ categories, notis }) => {
@@ -53,7 +59,8 @@ const Footer = ({ categories, notis }) => {
                     className="flex items-center mt-8 group hover:text-blue-400 transition-color duration-200"
                     key={element.slug}
                   >
-                    <div className="w-3 h-3 rounded-full bg-gray-50 mr-4 group-hover:bg-blue-200"></div>
+                    <Bars3BottomRightIcon className="w-4 mr-2" />
+                    {/* <div className="w-3 h-3 rounded-full bg-gray-50 mr-4 group-hover:bg-blue-200"></div> */}
                     <div className="">{element.title}</div>
                   </a>
                 </Link>
@@ -73,7 +80,8 @@ const Footer = ({ categories, notis }) => {
                     key={element.slug}
                   >
                     <div>
-                      <div className="w-3 h-3 rounded-full bg-gray-50 mr-4 group-hover:bg-blue-200"></div>
+                      <ChevronDoubleRightIcon className="w-4 mr-2" />
+                      {/* <div className="w-3 h-3 rounded-full bg-gray-50 mr-4 group-hover:bg-blue-200"></div> */}
                     </div>
                     <div className="line-clamp-1">{element.title}</div>
                   </a>
