@@ -2,6 +2,7 @@ import Title from "@/components/title";
 import Link from "next/link";
 import { useGlobal } from "@/context/global";
 import { BellIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 const Menu = () => {
   const data = useGlobal();
   return (
@@ -41,21 +42,18 @@ const Menu = () => {
       </div>
 
       <div className="box mt-10 mb-3">
-        <Title>Bộ chỉ số</Title>
-        {data.notifications.map((item) => {
-          const { title, slug } = item.attributes;
-          return (
-            <Link href={"/bai-viet/" + slug} title={title}>
-              <a
-                title={title}
-                className="flex mt-3 pointer font-bold text-gray-700 hover:text-blue-700 truncate"
-              >
-                <InformationCircleIcon className="h-6 w-6 stroke-blue-400" />
-                <div className="w-[300px] truncate text-lg ml-3">{title}</div>
-              </a>
-            </Link>
-          );
-        })}
+        <Link href="/bo-chi-so">
+          <a>
+            <Image
+              className="w-full"
+              src={"/images/bo-chi-so.jpg"}
+              width="555"
+              height={372}
+              alt="content"
+              layout="responsive"
+            />
+          </a>
+        </Link>
       </div>
 
       <style jsx>
