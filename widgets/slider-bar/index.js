@@ -1,7 +1,12 @@
 import Title from "@/components/title";
 import Link from "next/link";
 import { useGlobal } from "@/context/global";
-import { BellIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
+import {
+  BellIcon,
+  InformationCircleIcon,
+  MagnifyingGlassCircleIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 const Menu = () => {
   const data = useGlobal();
@@ -43,7 +48,7 @@ const Menu = () => {
 
       <div className="box mt-10 mb-3">
         <Link href="/bo-chi-so">
-          <a>
+          <a className="relative">
             <Image
               className="w-full"
               src={"/images/bo-chi-so.jpg"}
@@ -52,6 +57,10 @@ const Menu = () => {
               alt="content"
               layout="responsive"
             />
+            <div className="absolute bottom-0 left-0 text-center font-bold w-full py-2 text-white flex items-center justify-center">
+              <MagnifyingGlassIcon  className="mr-1 w-6 h-6"/>
+              CHỈ SỐ NƯỚC TỈNH BÌNH ĐỊNH
+            </div>
           </a>
         </Link>
       </div>

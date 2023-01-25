@@ -67,7 +67,7 @@ const Library = ({ data, ...rest }) => {
           <div className="flex mx-[-10px]">
             {listCurrent.map((item) => (
               <Element
-                key={item.id}
+                key={"element"+item.id}
                 data={item.attributes}
                 updateFile={() => {
                   router.push(router.pathname + "?folder=" + item.id);

@@ -54,7 +54,11 @@ const Footer = ({ categories, notis }) => {
             {data.map((item) => {
               const element = item.attributes;
               return (
-                <Link href={"/danh-muc/" + element.slug} passHref>
+                <Link
+                  href={"/danh-muc/" + element.slug}
+                  passHref
+                  key={item.id + "id item"}
+                >
                   <a
                     className="flex items-center mt-8 group hover:text-blue-400 transition-color duration-200"
                     key={element.slug}
@@ -74,7 +78,7 @@ const Footer = ({ categories, notis }) => {
             {data_notis.map((item) => {
               const element = item.attributes;
               return (
-                <Link href={"/bai-viet/" + element.slug} passHref>
+                <Link href={"/bai-viet/" + element.slug} passHref key={item.id + "baiviet"}> 
                   <a
                     className="flex items-center mt-8 group hover:text-blue-400 transition-color duration-200"
                     key={element.slug}
