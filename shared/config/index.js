@@ -1,1 +1,1 @@
-export const timeCache = 60 * 60;
+export const timeCache = 5 * 60;

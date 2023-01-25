@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { timeCache } from "@/shared/config";
 import Images from "@/components/home/list-image";
 import Notifcation from "@/components/home/notification";
+import PhotoAlbums from "@/components/home/gallery";
 
 export async function getStaticProps({ query, ...ctx }) {
   const main = axiosClient("/posts?populate=*&pagination[pageSize]=6");
@@ -19,7 +20,8 @@ export async function getStaticProps({ query, ...ctx }) {
   const url_recommend =
     "/posts?_sort=createdAt&populate=*&pagination[pageSize]=3";
   const url_video = "/videos?pagination[pageSize]=4&populate=*";
-  const url_notification = "/posts?populate=*&notification=true&pagination[pageSize]=10";
+  const url_notification =
+    "/posts?populate=*&notification=true&pagination[pageSize]=10";
   const post_inside = axiosClient(url_inside);
   const post_outside = axiosClient(url_outside);
   const post_recommend = axiosClient(url_recommend);
@@ -66,6 +68,7 @@ export default function Home({ data }) {
         <Images />
         <Video videos={videos.data} />
         <PostRecommed post_recommend={post_recommend.data} />
+        <PhotoAlbums />
       </div>
     </div>
   );

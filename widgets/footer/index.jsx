@@ -1,4 +1,7 @@
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { BsMessenger } from "react-icons/bs";
+import { AiOutlineGoogle } from "react-icons/ai";
 import {
   Bars3BottomRightIcon,
   EnvelopeIcon,
@@ -39,12 +42,25 @@ const Footer = ({ categories, notis }) => {
               <span>SDT hỗ trợ 1: 02563823179</span>
             </div>
             <div className="mt-8 flex items-center">
-              <PhoneIcon className="mr-4" />
-              <span>SDT hỗ trợ 2: 02563823179</span>
-            </div>
-            <div className="mt-8 flex items-center">
               <EnvelopeIcon className="mr-4" />
               <span>Email hỗ trợ: newbie.dev.js@gmail.com</span>
+            </div>
+            <div className="mt-8 flex items-center">
+              <div className="w-10 h-10 rounded-full mr-2 cursor-pointer bg-gray-700 flex items-center justify-center">
+                <EnvelopeIcon className="w-4 h-4" />
+              </div>
+              <div className="w-10 h-10 rounded-full mr-2 cursor-pointer bg-gray-700 flex items-center justify-center">
+                <FaFacebookF className="w-4 h-4" />
+              </div>
+              <div className="w-10 h-10 rounded-full mr-2 cursor-pointer bg-gray-700 flex items-center justify-center">
+                <AiOutlineGoogle className="w-4 h-4" />
+              </div>
+              <div className="w-10 h-10 rounded-full mr-2 cursor-pointer bg-gray-700 flex items-center justify-center">
+                <FaInstagram className="w-4 h-4" />
+              </div>
+              <div className="w-10 h-10 rounded-full mr-2 cursor-pointer bg-gray-700 flex items-center justify-center">
+                <BsMessenger className="w-4 h-4" />
+              </div>
             </div>
           </div>
         </div>
@@ -64,7 +80,6 @@ const Footer = ({ categories, notis }) => {
                     key={element.slug}
                   >
                     <Bars3BottomRightIcon className="w-4 mr-2" />
-                    {/* <div className="w-3 h-3 rounded-full bg-gray-50 mr-4 group-hover:bg-blue-200"></div> */}
                     <div className="">{element.title}</div>
                   </a>
                 </Link>
@@ -78,7 +93,11 @@ const Footer = ({ categories, notis }) => {
             {data_notis.map((item) => {
               const element = item.attributes;
               return (
-                <Link href={"/bai-viet/" + element.slug} passHref key={item.id + "baiviet"}> 
+                <Link
+                  href={"/bai-viet/" + element.slug}
+                  passHref
+                  key={item.id + "baiviet"}
+                >
                   <a
                     className="flex items-center mt-8 group hover:text-blue-400 transition-color duration-200"
                     key={element.slug}
@@ -95,11 +114,12 @@ const Footer = ({ categories, notis }) => {
           </div>
         </div>
       </div>
-      <div className="bg-white">
-        <div className="container text-black mx-auto py-3 bg-white">
+      <div className="bg-white font-mono text-[10px]">
+        <div className="container text-gray-400 mx-auto py-3 bg-white">
           <div className="mt-2 text-center ">
-            <b>© 1997-2023.</b> Toàn bộ bản quyền thuộc{" "}
-            <b className="text-black">nuocnongthon.binhdinh.vn</b>
+            <b>© 1997-2023.</b> Thiết kế bởi
+            <b className="ml-1">Bruno</b>
+            <i className="ml-1 ">"Liên hệ: nhatnn1808@gmail.com"</i>
           </div>
         </div>
       </div>

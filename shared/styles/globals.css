@@ -186,3 +186,7 @@ svg {
   width: inherit;
   height: inherit;
 }
+
+.photo-album img{
+  object-fit: cover;
+}

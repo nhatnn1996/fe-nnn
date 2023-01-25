@@ -24,7 +24,7 @@ const Video = ({ videos }) => {
         <div className="font-bold text-white text-md mb-3">VIDEO NỔI BẬT</div>
         <div className="flex w-full">
           <div className="w-2/4 mr-3 bg-gray-50">
-            <video className="video-main w-full" src={url_video} controls />
+            <video className="video-main w-full h-[350px]" src={url_video} controls />
             <div className="overlay"></div>
             <div className="font-bold mt-4 px-2"> {mainVideo.attributes.title} </div>
             <div className="mt-2">{mainVideo.attributes.description}</div>
