@@ -82,7 +82,7 @@ const menus = [
     ],
   },
   { name: "Bộ chỉ số", href: "/bo-chi-so" },
-  { name: "Nhà máy NS", href: "/" },
+  // { name: "Nhà máy NS", href: "/" },
   { name: "Thư viện", href: "/thu-vien" },
   { name: "Liên hệ - góp ý", href: "/" },
 ];
@@ -144,7 +144,7 @@ const Item = (props) => {
   // pathname.includes(element.href);
   // console.log(pathname, element.href, active);
   return (
-    <li className="mr-8 menu-item font-base flex relative items-center py-4">
+    <li className="sm:mr-4 2xl:mr-8 menu-item font-base flex relative items-center py-4">
       <div
         className={
           "w-2 h-2 mr-2 rounded " + (!active ? " bg-secondary" : "bg-primary")

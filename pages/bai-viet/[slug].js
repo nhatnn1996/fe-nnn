@@ -36,6 +36,7 @@ export async function getStaticPaths() {
 }
 
 const PostDeital = ({ data, posts }) => {
+  console.log(data);
   if (!data) return <NotFound />;
   const breadcrumb = [
     {

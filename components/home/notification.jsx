@@ -1,4 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 import { useRef } from "react";
 import Slider from "react-slick";
 import ImageCustom from "../common/image";
@@ -9,7 +10,7 @@ const Notifcation = ({ notis = [] }) => {
     infinite: true,
     speed: 500,
     autoplaySpeed: 5000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
@@ -25,26 +26,28 @@ const Notifcation = ({ notis = [] }) => {
               const element = item.attributes;
               // console.log(element);
               return (
-                <div className="h-full">
-                  <div className="flex gap-3 pr-4">
-                    <div key={item} className="w-3/12 min-w-20">
-                      <div className="w-full">
-                        <ImageCustom
-                          image={element.image}
-                          width={100}
-                          height={72}
-                          layout="responsive"
-                          objectFit="cover"
-                        />
+                <Link href={"/bai-viet/" + element.slug} passHref>
+                  <a className="h-full">
+                    <div className="flex gap-3 pr-4">
+                      <div key={item} className="w-3/12 min-w-20">
+                        <div className="w-full">
+                          <ImageCustom
+                            image={element.image}
+                            width={73}
+                            height={72}
+                            layout="responsive"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="w-9/12 ">
+                        <div className="font-bold text-gray-600 line-clamp-3">
+                          {element.title}
+                        </div>
                       </div>
                     </div>
-                    <div className="w-9/12 ">
-                      <div className="font-bold text-gray-600 line-clamp-3">
-                        {element.title}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </a>
+                </Link>
               );
             })}
           </Slider>
