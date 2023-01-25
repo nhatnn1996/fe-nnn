@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, commonData }) {
   const router = useRouter();
-  console.log(commonData);
+  // console.log(commonData);
   return (
     <SWRConfig
       value={{

@@ -10,7 +10,7 @@ import Link from "next/link";
 const Footer = ({ categories, notis }) => {
   const data = (categories.data || []).slice(0, 5);
   const data_notis = (notis || []).slice(0, 5);
-  console.log(data_notis);
+  // console.log(data_notis);
   return (
     <footer className="mt-20  bg-[#19222A] text-white">
       <div className="flex py-10 container mx-auto">
