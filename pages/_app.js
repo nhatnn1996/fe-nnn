@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, commonData }) {
   const router = useRouter();
-  // console.log(Component.removeSlide);
+  console.log(commonData);
   return (
     <SWRConfig
       value={{
@@ -28,8 +28,10 @@ function MyApp({ Component, pageProps, commonData }) {
         <Header />
         <Menu />
 
-        <main className="container mx-auto flex mt-10">
-          <div className={Component.removeSlide ? "w-full min-h-[70vh]" : "w-full"}>
+        <main className="container mx-auto flex mt-20">
+          <div
+            className={Component.removeSlide ? "w-full min-h-[70vh]" : "w-full"}
+          >
             <motion.div
               key={router.asPath}
               initial={{ opacity: 0 }}
@@ -47,23 +49,31 @@ function MyApp({ Component, pageProps, commonData }) {
             </div>
           )}
         </main>
-        <Footer />
+        <Footer categories={commonData.categories} notis={commonData.notifications} />
       </GlobalContext>
     </SWRConfig>
   );
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
+  const url_category = `/categories`;
+  const pro_categories = axiosClient(url_category);
   const url_notifications =
     "/posts?&filters[notification][$eq]=true&sort=updatedAt:DESC&pagination[pageSize]=6";
   const post_notifications = axiosClient(url_notifications);
-  const [notifications] = await Promise.all([post_notifications]);
+  const [notifications, categories] = await Promise.all([
+    post_notifications,
+    pro_categories,
+  ]);
 
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
-  return { pageProps, commonData: { notifications: notifications.data } };
+  return {
+    pageProps,
+    commonData: { notifications: notifications.data, categories },
+  };
 };
 
 export default MyApp;

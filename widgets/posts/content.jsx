@@ -8,7 +8,7 @@ const PostContent = ({ post_inside, post_outside }) => {
   const firtOS = post_outside.slice(0, 1);
   const listOS = post_outside.slice(1, post_outside.length);
   return (
-    <div className="post-main mt-10 flex">
+    <div className="post-main mt-20 flex">
       <div className="w-8/12">
         <div className="flex gap-4">
           <div className="w-1/2">

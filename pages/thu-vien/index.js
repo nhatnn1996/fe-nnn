@@ -63,7 +63,7 @@ const Library = ({ data, ...rest }) => {
           transition={{ duration: 0.3 }}
         >
           {listCurrent?.length > 0 && (
-            <div className="text-lg font-bold mt-10">Thư mục</div>
+            <div className="text-lg font-bold mt-20">Thư mục</div>
           )}
 
           <div className="flex mx-[-10px]">
@@ -78,7 +78,7 @@ const Library = ({ data, ...rest }) => {
             ))}
           </div>
           {parent?.attributes?.files.length > 0 && (
-            <div className="text-lg font-bold mt-10">Tệp</div>
+            <div className="text-lg font-bold mt-20">Tệp</div>
           )}
           <div className="flex mx-[-10px]">
             {parent?.attributes?.files.map((item) => (

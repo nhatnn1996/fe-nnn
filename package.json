@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.13",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/line-clamp": "^0.2.0",
     "axios": "^0.27.2",

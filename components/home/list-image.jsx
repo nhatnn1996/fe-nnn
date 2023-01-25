@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import {  ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useRef } from "react";
 import Slider from "react-slick";
@@ -38,11 +38,7 @@ const Images = () => {
           }}
         ></div>
         <div className="relative">
-          <Slider
-            ref={ref}
-            {...settings}
-            className="mx-[-8px] mt-2 gap-4"
-          >
+          <Slider ref={ref} {...settings} className="mx-[-8px] mt-2 gap-4">
             {items.map((item, index) => {
               return (
                 <div>

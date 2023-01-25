@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 body,
 html {
   /* font-family: "Noto Serif Display", serif; */
@@ -24,10 +23,10 @@ html {
     color: #00539f;
   }
   .bg-secondary {
-    background: #E9EAEB;
+    background: #e9eaeb;
   }
   .text-secondary {
-    color: #E9EAEB;
+    color: #e9eaeb;
   }
 }
 

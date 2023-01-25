@@ -6,11 +6,16 @@ import Image from "next/image";
 const Header = () => {
   return (
     <div>
-      <nav className=" bg-white h-12 w-full py-4 container mx-auto">
-        <div className="flex items-center">
+      <nav className=" bg-white h-12 w-full container mx-auto">
+        <div className="flex items-center h-full">
           <div className="font-bold text-red-800">
-          MÔI TRƯỜNG NÔNG THÔN TỈNH BÌNH ĐỊNH kính chào năm mới 2023 an khanh thịnh
-            vượng vạn sự như ý
+            MÔI TRƯỜNG NÔNG THÔN TỈNH BÌNH ĐỊNH kính chào năm mới 2023 an khanh
+            thịnh vượng vạn sự như ý
+          </div>
+          <div className="ml-auto flex items-center bg-gray-100 pr-2 rounded-md p-1">
+            <img className="w-10 h-10 left-0" src="/images/weather.png" />
+            <span className="font-bold mr-3 text-gray-500">Bình Định</span>
+            <span className="font font-bold text-gray-500">18° - 19°</span>
           </div>
           <div className="fixed top-0 w-[150px] right-0 z-10">
             <Image
@@ -20,7 +25,7 @@ const Header = () => {
               layout="responsive"
               objectFit="contain"
               className=""
-            />  
+            />
           </div>
         </div>
       </nav>

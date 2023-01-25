@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { timeCache } from "@/shared/config";
 import Images from "@/components/home/list-image";
+import Notifcation from "@/components/home/notification";
 
 export async function getStaticProps({ query, ...ctx }) {
   const main = axiosClient("/posts?populate=*&pagination[pageSize]=6");
@@ -18,7 +19,7 @@ export async function getStaticProps({ query, ...ctx }) {
   const url_recommend =
     "/posts?_sort=createdAt&populate=*&pagination[pageSize]=3";
   const url_video = "/videos?pagination[pageSize]=4&populate=*";
-  const url_notification = "/posts?notification=true&pagination[pageSize]=3";
+  const url_notification = "/posts?populate=*&notification=true&pagination[pageSize]=10";
   const post_inside = axiosClient(url_inside);
   const post_outside = axiosClient(url_outside);
   const post_recommend = axiosClient(url_recommend);
@@ -39,7 +40,14 @@ export async function getStaticProps({ query, ...ctx }) {
 }
 
 export default function Home({ data }) {
-  const [posts_main, post_inside, post_outside, post_recommend, videos] = data;
+  const [
+    posts_main,
+    post_inside,
+    post_outside,
+    post_recommend,
+    videos,
+    notification,
+  ] = data;
   return (
     <div>
       <Head>
@@ -48,6 +56,7 @@ export default function Home({ data }) {
       </Head>
 
       <div className="main">
+        <Notifcation notis={notification.data} />
         <PostMain posts={posts_main.data} />
         <Extention />
         <PostContent

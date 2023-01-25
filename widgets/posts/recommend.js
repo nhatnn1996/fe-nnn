@@ -47,13 +47,13 @@ export const Post = ({ item }) => {
             />
           </div>
         </div>
-        <div className="mt-2 text-xs font-bold opacity-50">
+        <div className="mt-2 text-sm font-mono font-bold opacity-50">
           {localeTime(item.updatedAt)}
         </div>
-        <div className="text-base font-semibold text-gray-900	mt-1 hover:text-blue-700 pointer line-clamp-2">
+        <div className="text-md font-bold text-gray-700	mt-1 hover:text-blue-700 pointer line-clamp-2">
           {item.title}
         </div>
-        <div className="text-xs text-gray-700	mt-1  line-clamp-2">
+        <div className="text-md italic text-gray-500 mt-1 line-clamp-2">
           {item.description}
         </div>
         <style global jsx>{`

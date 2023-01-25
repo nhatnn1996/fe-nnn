@@ -9,6 +9,7 @@ const PostMain = ({ posts }) => {
     dots: false,
     infinite: true,
     speed: 500,
+    autoplaySpeed: 4000,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
@@ -17,7 +18,7 @@ const PostMain = ({ posts }) => {
     <div className="post-main overflow-hidden">
       <div className="flex gap-3">
         <div className="w-9/12 h-full">
-          <Slider {...settings} className="mx-[-8px] mt-2 h-full">
+          <Slider {...settings} className="mx-[-8px] h-full bg-gray-50">
             {posts.map((item, index) => {
               const post = item.attributes;
               return (
@@ -38,10 +39,10 @@ const PostMain = ({ posts }) => {
                   </div>
                   <Link href={"/bai-viet/" + post.slug}>
                     <div>
-                      <div className="text-base font-bold text-gray-700	mt-2">
+                      <div className="px-2 text-base font-bold text-gray-700	mt-2">
                         {post.title}
                       </div>
-                      <div className="text-base text-gray-600 line-clamp-2 italic">
+                      <div className="px-2  text-base text-gray-600 line-clamp-2 italic">
                         {post.description}
                       </div>
                     </div>
@@ -53,10 +54,10 @@ const PostMain = ({ posts }) => {
         </div>
         <div className="w-3/12">
           <Link href="/bo-chi-so/ban-do">
-            <div className="overflow-hidden mt-2 map-home group relative rounded">
+            <div className="overflow-hidden h-full map-home group relative rounded">
               <img
                 src="/images/binh-dinh-map.jpeg"
-                className="cursor-pointer hover:scale-125	transition-all duration-300"
+                className="cursor-pointer hover:scale-125	transition-all h-full duration-300"
               />
               <div className="absolute opacity-1 top-[30%] left-[10%] bg-white bg-gray shadow-lg pointer-events-none rounded p-4 font-bold">
                 Bấm vào để đi đến bản đồ
@@ -79,7 +80,7 @@ const PostMain = ({ posts }) => {
           object-fit: cover;
         }
       `}</style>
-      <div className="mt-10 h-1 w-full bg-secondary"> </div>
+      {/* <div className="mt-20 h-1 w-full bg-secondary"> </div> */}
     </div>
   );
 };

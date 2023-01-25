@@ -7,7 +7,7 @@ const ImageCustom = ({
   src,
   image,
   layout = "responsive",
-  size = "thumbnail",
+  size = "small",
   ...rest
 }) => {
   const parseSrc = image ? getImage(image, size) : "";

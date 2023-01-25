@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { setCategories } from "../../store/global";
 import qs from "qs";
 import axiosClient from "api-client/base/axios-client";
+import { useRouter } from "next/router";
 
 const menus = [
   { name: "Trang chủ", href: "/" },
@@ -26,7 +27,7 @@ const menus = [
   },
   {
     name: "Tin tức - sư kiện",
-    href: "/",
+    href: "/tin-tuc-su-kien",
     sub: [
       {
         name: "Tin trong nước ",
@@ -137,9 +138,18 @@ const Menu = () => {
 
 export default Menu;
 const Item = (props) => {
+  // const { pathname } = useRouter();
   const { element } = props;
+  const active = false;
+  // pathname.includes(element.href);
+  // console.log(pathname, element.href, active);
   return (
     <li className="mr-8 menu-item font-base flex relative items-center py-4">
+      <div
+        className={
+          "w-2 h-2 mr-2 rounded " + (!active ? " bg-secondary" : "bg-primary")
+        }
+      ></div>
       <Link href={element.href}>
         <a className="text-gray-700 font-bold">{element.name}</a>
       </Link>
