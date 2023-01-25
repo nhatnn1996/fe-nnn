@@ -1,5 +1,5 @@
 import { localeTime } from "@/shared/helper/function";
-import { CollectionIcon, XIcon } from "@heroicons/react/solid";
+import {  FolderIcon,  XMarkIcon } from "@heroicons/react/24/solid";
 const mapName = {
   "application/zip": "zip",
 };
@@ -26,13 +26,13 @@ const InfoFile = ({ file = {}, open, toggle }) => {
           }}
         >
           <span className="mat-button-wrapper cursor-pointer ">
-            <XIcon />
+            <XMarkIcon />
           </span>
         </div>
         <div className="aspect-w-9 aspect-h-6 mt-4">
           {!isImage && (
             <div className="flex items-center justify-center border rounded-lg bg-gray-50 dark:bg-card py-10">
-              <CollectionIcon className="w-20 h-20 fill-blue-400" />
+              <FolderIcon className="w-20 h-20 fill-blue-400" />
             </div>
           )}
           {isImage && (

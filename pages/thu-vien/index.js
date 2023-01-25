@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Folders from "@/widgets/folders";
 import axiosClient from "api-client/base/axios-client";
 import { timeCache } from "@/shared/config";
-import { FolderIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import InfoFile from "@/components/common/file/info";
 import { useState } from "react";
 import { useModal } from "hooks/use-modal";
@@ -10,7 +8,7 @@ import { useRouter } from "next/router";
 import File from "@/components/common/file/card";
 import { motion } from "framer-motion";
 import { variantsHidden } from "@/shared/config/motion";
-import Breadcrumb from "@/widgets/breadcrum";
+import { ArrowLeftIcon, FolderIcon } from "@heroicons/react/24/solid";
 
 const Library = ({ data, ...rest }) => {
   const router = useRouter();
@@ -50,7 +48,7 @@ const Library = ({ data, ...rest }) => {
             className="inline-flex items-center cursor-pointer rounded-full font-bold transition-color bg-slate-100 text-slate-700 hover:text-white hover:bg-blue-400 duration-300 px-8 py-2.5 "
             onClick={goBack}
           >
-            <ArrowNarrowLeftIcon className="mr-3" />
+            <ArrowLeftIcon className="mr-3" />
             Quay lại
           </div>
         </div>

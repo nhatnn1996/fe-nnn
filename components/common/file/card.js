@@ -1,5 +1,5 @@
 import { TempIcon } from "@/components/icons";
-import { EyeIcon } from "@heroicons/react/solid";
+import { EyeIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
 const File = ({ data, updateFile }) => {

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Folders from "@/widgets/folders";
 import axiosClient from "api-client/base/axios-client";
 import { timeCache } from "@/shared/config";
-import { DownloadIcon } from "@heroicons/react/solid";
+import { ArrowDownCircleIcon } from "@heroicons/react/24/solid";
 import InfoFile from "@/components/common/file/info";
 import { useState } from "react";
 import { useModal } from "hooks/use-modal";
@@ -73,7 +73,7 @@ const Element = ({ data, setOpen, updateFile }) => {
         Docx
       </div>
       <div className="rounded-full ml-3 w-10 h-10 flex justify-center items-center bg-white shadow">
-        <DownloadIcon className="fill-gray-400" />
+        <ArrowDownCircleIcon className="fill-gray-400" />
       </div>
     </div>
   );
