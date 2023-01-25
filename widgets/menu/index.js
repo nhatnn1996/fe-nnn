@@ -84,7 +84,7 @@ const menus = [
   { name: "Bộ chỉ số", href: "/bo-chi-so" },
   // { name: "Nhà máy NS", href: "/" },
   { name: "Thư viện", href: "/thu-vien" },
-  { name: "Liên hệ - góp ý", href: "/" },
+  { name: "Liên hệ - góp ý", href: "/lien-he" },
 ];
 
 const getChildCategory = (data, slug) => {
